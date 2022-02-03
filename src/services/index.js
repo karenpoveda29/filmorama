@@ -9,6 +9,16 @@ export const loginUser = ({email , password}) => {
   }); 
 };
 
+export const isUserLoggedIn = () => {
+  return new Promise((resolve, reject) => {
+    try {
+      resolve(localStorage.getItem("filmorama-userIsLoggedIn"));
+    } catch (error) {
+      reject(error);
+    }
+  }); 
+};
+
 export const logoutUser = () => {
   return new Promise((resolve, reject) => {
     try {

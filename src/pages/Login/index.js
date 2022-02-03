@@ -1,19 +1,29 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
 
 
 //Services
-import { loginUser } from "../../services";
+import { loginUser, isUserLoggedIn } from "../../services";
 
 const Login = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    isUserLoggedIn().then(userIsLoggedIn => {
+      if(userIsLoggedIn){
+        navigate("/");
+      }
+    })
+  }, [ ]);
+
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    loginUser({email: "", password: ""}).then(() => {
-      console.log("login successful");
+    loginUser({email: "", password: ""})
+    .then(() => {
       navigate("/");
-    })
+    }).catch(err => console.log(err));
   };
 
   return (
