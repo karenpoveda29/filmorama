@@ -5,9 +5,13 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 
+//Components
+import Header from "./components/Header"
+
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route  exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
