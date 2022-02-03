@@ -1,7 +1,24 @@
+import { useNavigate } from "react-router-dom";
+
+
+//Services
+import { loginUser } from "../../services";
+
 const Login = () => {
+
+  const navigate = useNavigate();
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    loginUser({email: "", password: ""}).then(() => {
+      console.log("login successful");
+      navigate("/");
+    })
+  };
+
   return (
-    <form>
-      <did>
+    <form onSubmit={handleFormSubmit}>
+      <div>
         <label htmlFor="email">
           Email
           <span className="require">*</span>
@@ -12,7 +29,7 @@ const Login = () => {
           placeholder="Email"
           required
         />
-      </did>
+      </div>
 
       <div>
         <label htmlFor="password">
