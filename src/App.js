@@ -9,6 +9,7 @@ import Details from "./pages/Details";
 
 //Components
 import Header from "./components/Header"
+import Navigation from "./components/Navigation"
 
 //Services
 import { isUserLoggedIn } from "./services"
@@ -34,6 +35,7 @@ function App() {
         <Route path="/details" element={<Details />} />
         <Route path="*" element={<h1>404 Page Not Found</h1>} />
       </Routes>
+      {location.pathname !== "/login" && <Navigation />}
     </> 
   );
 }
