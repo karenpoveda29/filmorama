@@ -31,3 +31,10 @@ export const logoutUser = () => {
     }
   }); 
 };
+
+export const getMovies = ({page}) => {
+  const apiKey = process.env.REACT_APP_THE_MOVIE_DB_API_KEY;
+  return fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${page}`)
+  .then(res => res.json())
+  .then(res => res.results);
+};
