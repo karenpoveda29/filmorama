@@ -14,6 +14,9 @@ import Navigation from "./components/Navigation"
 //Services
 import { isUserLoggedIn } from "./services"
 
+//Constants
+import { LOGIN } from "./constants/routes"
+
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -21,7 +24,7 @@ function App() {
   useEffect(() => {
     isUserLoggedIn().then(userIsLoggedIn => {
       if(!userIsLoggedIn && location.pathname !== "login"){
-        navigate("/login");
+        navigate(LOGIN);
       }
     })
   }, [location.pathname]);
@@ -31,11 +34,11 @@ function App() {
       <Header />
       <Routes>
         <Route  exact path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path= {LOGIN} element={<Login />} />
         <Route path="/details" element={<Details />} />
         <Route path="*" element={<h1>404 Page Not Found</h1>} />
       </Routes>
-      {location.pathname !== "/login" && <Navigation />}
+      {location.pathname !== LOGIN && <Navigation />}
     </> 
   );
 }

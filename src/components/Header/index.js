@@ -5,6 +5,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 //Services
 import { isUserLoggedIn, logoutUser } from "../../services";
 
+//Constants
+import { LOGIN } from "../../constants/routes"
+
 const Header = () => {
   const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
   const navigate = useNavigate();
@@ -18,7 +21,7 @@ const Header = () => {
 
   const handleLogout = () => {
     logoutUser().then(() => {
-      navigate("/login")
+      navigate(LOGIN)
     })
   };
 
@@ -34,7 +37,7 @@ const Header = () => {
               Log out
             </button>
           ) : (
-            <Link to="/login">Login</Link>
+            <Link to={LOGIN}>Login</Link>
           )}
         </li>
       </ul>
