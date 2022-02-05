@@ -28,11 +28,9 @@ const Header = () => {
 
   return (
     <nav className="header">
-      <h1 className="header__title">
-        <Link to="/">Filmorama</Link>
-      </h1>
+      <h1 className="header__title">Filmorama</h1>
           {userIsLoggedIn &&
-            <button type="button" onClick={handleLogout}>
+            <button className="header__logout-btn" type="button" onClick={handleLogout}>
               Log out
             </button>
           }
