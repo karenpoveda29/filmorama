@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
+import "./header.css";
 
 //Services
 import { isUserLoggedIn, logoutUser } from "../../services";
@@ -26,21 +27,15 @@ const Header = () => {
   };
 
   return (
-    <nav>
-      <h1>
+    <nav className="header">
+      <h1 className="header__title">
         <Link to="/">Filmorama</Link>
       </h1>
-      <ul>
-        <li>
-          {userIsLoggedIn ? (
+          {userIsLoggedIn &&
             <button type="button" onClick={handleLogout}>
               Log out
             </button>
-          ) : (
-            <Link to={LOGIN}>Login</Link>
-          )}
-        </li>
-      </ul>
+          }
     </nav>
   );
 };

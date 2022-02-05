@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      {location.pathname !== LOGIN && <Header />}
       <Routes>
         <Route  exact path="/" element={<Home />} />
         <Route path= {LOGIN} element={<Login />} />
