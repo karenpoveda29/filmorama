@@ -26,9 +26,11 @@
   padding: .8rem 1rem;
   border: none;
 }
-.navbar__icon-link {
+
+.navbar__icon {
   color: var(--font-color);
   font-size: 1.5rem;
+  margin-right: .5rem;
 }
 
 .navbar__link {
@@ -45,6 +47,6 @@
 
 .active-page {
   border-radius: 15px;
-  background-color: rgba(98, 69, 146, 0.3);
+  background-color: rgba(106, 75, 155, 0.3);
   color: #F9F5FF;
 }

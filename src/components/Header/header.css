@@ -19,8 +19,8 @@
   color: var(--font-color); 
   padding: .3rem .5rem; 
   font-weight: 700;
-  border: solid #ad9bf8;
+  border: 1px solid #ad9bf8;
   border-radius: 10px;
-  background-color: rgba(129, 127, 248, 0.589);
+  background-color: rgba(127, 125, 248, 0.589);
   cursor: pointer;
 }
