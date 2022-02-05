@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import "./home.css";
 
 //Services
 import { getMovies } from "../../services"
@@ -23,7 +23,7 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div className="home-page">
       <h2>Top Rated Movies</h2>
       <button type="button" disabled={page === 1} onClick={handlePreviousPage}>Previous</button>
       <button type="button" onClick={handleNextPage}>Next</button>
