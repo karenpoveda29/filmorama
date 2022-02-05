@@ -7,11 +7,11 @@ import "./navigation.css";
     <nav className="navbar">
       <ul className="navbar__list">
         <li className="navbar__list-item">
-          <BsFillCameraReelsFill color="#ddd1ff" size="2rem"/>
+          <BsFillCameraReelsFill color="#ddd1ff" size="1.5rem"/>
           <Link className="navbar__link" to="/">Home</Link>
         </li>
         <li className="navbar__list-item">
-          <BsFillBookmarkHeartFill color="#ddd1ff" size="2rem"/>
+          <BsFillBookmarkHeartFill className="navbar__icon-link" />
           <Link className="navbar__link" to="/favorites">Favorites</Link>
         </li>
       </ul>
