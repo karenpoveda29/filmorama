@@ -1,6 +1,8 @@
+import "./pagination.css";
+
 const Pagination = ({page, onPreviousPage, onNextPage}) => {
   return (
-    <div>
+    <div className="pagination">
       <button type="button" disabled={page === 1} onClick={onPreviousPage}>
         Previous
       </button>
