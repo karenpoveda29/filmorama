@@ -3,6 +3,7 @@ import "./home.css";
 
 //Components
 import MovieCard from "../../components/MovieCard";
+import Pagination from "../../components/Pagination";
 
 //Services
 import { getMovies } from "../../services";
@@ -25,22 +26,26 @@ const Home = () => {
   return (
     <div className="home-page">
       <h2>Top Rated Movies</h2>
-      <button type="button" disabled={page === 1} onClick={handlePreviousPage}>
-        Previous
-      </button>
-      <button type="button" onClick={handleNextPage}>
-        Next
-      </button>
+      <Pagination
+        page={page}
+        onPreviousPage={handlePreviousPage}
+        onNextPage={handleNextPage}
+      />
       <ul>
         {movies?.map((movie) => (
           <MovieCard
-            key={movie.id}
-            posterPath={movie.poster_path}
-            title={movie.title}
-            voteAverage={movie.vote_average}
+          key={movie.id}
+          posterPath={movie.poster_path}
+          title={movie.title}
+          voteAverage={movie.vote_average}
           />
-        ))}
+          ))}
       </ul>
+      <Pagination
+        page={page}
+        onPreviousPage={handlePreviousPage}
+        onNextPage={handleNextPage}
+      />
     </div>
   );
 };

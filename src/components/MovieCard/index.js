@@ -8,7 +8,7 @@ const MovieCard = ({posterPath, title, voteAverage}) => {
       <h3>{title}</h3>
       <p>{voteAverage}</p>
     </li>
-  )
+  );
 };
 
 export default MovieCard;
