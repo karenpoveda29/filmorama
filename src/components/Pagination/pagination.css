@@ -1,3 +1,27 @@
 .pagination {
   align-self: flex-end;
 }
+
+.pagination__btn {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--font-color);
+  width: 60px;
+  height: 30px;
+  border: 2px solid #705cbe;
+  border-radius: 10px;
+  background-color: rgb(53, 36, 101, 0.8);
+}
+
+.pagination__btn-previous {
+  margin-right: 2rem;
+}
+
+.pagination__btn:disabled {
+  cursor: not-allowed;
+  background-color: rgba(133, 114, 184, 0.8);
+}
+
+/* .pagination__btn-icon {
+  margin: 0;
+} */
