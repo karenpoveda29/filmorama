@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
- 
+import "./movie-card.css";
+
 //Constants
 import { IMAGE_URL } from "../../constants/urls";
 
@@ -16,25 +17,36 @@ const MovieCard = ({
   onRemoveFavorite,
 }) => {
   return (
-    <li>
+    <li className="card">
       <Link to={`/details/${id}`}>
-        <img src={`${IMAGE_URL}${posterPath}`} alt={title} />
+        <img
+          src={`${IMAGE_URL}${posterPath}`}
+          alt={title}
+          className="card__image"
+        />
       </Link>
-      <h3>{title}</h3>
-      <p>{voteAverage}</p>
-      {isOnFavoriteMovies ? (
-        <BsHeartFill
-          onClick={() => {
-            onRemoveFavorite(id);
-          }}
-        />
-      ) : (
-        <BsHeart
-          onClick={() => {
-            onAddFavorite(id);
-          }}
-        />
-      )}
+      <div className="card__info">
+        <h3 className="card__info-title">{title}</h3>
+        <p className="card__info-score">
+          {voteAverage}
+          <span>/10</span>
+        </p>
+        {isOnFavoriteMovies ? (
+          <BsHeartFill
+            className="card__favorite-btn"
+            onClick={() => { 
+              onRemoveFavorite(id);
+            }}
+          />
+        ) : (
+          <BsHeart
+            className="card__favorite-btn"
+            onClick={() => {
+              onAddFavorite(id);
+            }}
+          />
+        )}
+      </div>
     </li>
   );
 };

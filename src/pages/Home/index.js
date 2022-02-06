@@ -61,7 +61,7 @@ const Home = () => {
   const moviesToShow = movies.filter(bySearchTerm);
 
   return (
-    <div className="home-page">
+    <section className="home-page">
       <div className="home-header">
         <h2>Top Rated Movies</h2>
         <SearchBox searchTerm={searchTerm} onSearchTerm={handleSearchTerm}/>
@@ -72,7 +72,7 @@ const Home = () => {
         onPreviousPage={handlePreviousPage}
         onNextPage={handleNextPage}
       />
-      <ul>
+      <ul className="cards-container">
         {moviesToShow.length === 0 && searchTerm !== "" && <p className="info-message">No movies match the search</p>}
         {moviesToShow?.map((movie) => (
           <MovieCard
@@ -96,7 +96,7 @@ const Home = () => {
         onPreviousPage={handlePreviousPage}
         onNextPage={handleNextPage}
       />
-    </div>
+    </section>
   );
 };
 

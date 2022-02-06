@@ -22,20 +22,23 @@ const Favorites = () => {
   };
 
   return (
-    <ul>
-      {favoriteMovies.length === 0 && <p className="info-message">There are no favorite movies</p>}
-      {favoriteMovies?.map((favoriteMovie) => (
-        <MovieCard
-          key={favoriteMovie.id}
-          id={favoriteMovie.id}
-          posterPath={favoriteMovie.poster_path}
-          title={favoriteMovie.title}
-          voteAverage={favoriteMovie.vote_average}
-          isOnFavoriteMovies={true}
-          onRemoveFavorite={handleRemoveFavorite}
-        />
-      ))}
-    </ul>
+    <section>
+      <h2>Your favorites</h2>
+      <ul>
+        {favoriteMovies.length === 0 && <p className="info-message">There are no favorite movies</p>}
+        {favoriteMovies?.map((favoriteMovie) => (
+          <MovieCard
+            key={favoriteMovie.id}
+            id={favoriteMovie.id}
+            posterPath={favoriteMovie.poster_path}
+            title={favoriteMovie.title}
+            voteAverage={favoriteMovie.vote_average}
+            isOnFavoriteMovies={true}
+            onRemoveFavorite={handleRemoveFavorite}
+          />
+        ))}
+      </ul>
+    </section>
   );
 };
 

@@ -18,7 +18,7 @@ const Details = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <section>
       <img
         src={`${IMAGE_URL}${movieDetails.backdrop_path}`}
         alt={movieDetails.title}
@@ -38,7 +38,7 @@ const Details = () => {
         {movieDetails.vote_average}
         <span>/10</span>
       </p>
-    </div>
+    </section>
   );
 };
 
