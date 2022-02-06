@@ -9,7 +9,7 @@ const POSTER_URL = "https://image.tmdb.org/t/p/w185/";
 const Home = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
-
+  
   useEffect(() => {
     getMovies({ page }).then(movies => setMovies(movies))
   }, [page])
@@ -20,7 +20,6 @@ const Home = () => {
   const handleNextPage = () => {
     setPage(page => page + 1)
   };
-
 
   return (
     <div className="home-page">

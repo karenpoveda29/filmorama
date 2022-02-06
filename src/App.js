@@ -6,6 +6,7 @@ import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
+import Favorites from "./pages/Favorites";
 
 //Components
 import Header from "./components/Header"
@@ -36,6 +37,7 @@ function App() {
         <Route  exact path="/" element={<Home />} />
         <Route path= {LOGIN} element={<Login />} />
         <Route path="/details" element={<Details />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<h1>404 Page Not Found</h1>} />
       </Routes>
       {location.pathname !== LOGIN && <Navigation />}
