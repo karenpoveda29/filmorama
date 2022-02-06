@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./login.css";
 
 //Services
 import { loginUser, isUserLoggedIn } from "../../services";
 
 const Login = () => {
+  const [loginError, setLoginError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,11 +19,18 @@ const Login = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    loginUser({ email: "", password: "" })
+    const formData = new FormData(e.target);
+    const email = formData.get("email");
+    const password = formData.get("password");
+    loginUser({ email, password })
       .then(() => {
         navigate("/");
       })
-      .catch((err) => console.log(err));
+      .catch((error) => setLoginError(error));
+  };
+
+  const handleremoveLoginErrorMessage = () => {
+    setLoginError("");
   };
 
   return (
@@ -30,16 +38,37 @@ const Login = () => {
       <form className="login__form" onSubmit={handleFormSubmit}>
         <h2 className="login__title">Login to Filmora</h2>
         <div className="login__input-container">
-          <label className="login__form-label" htmlFor="email">Email  *</label>
-          <input className="login__form-input" type="email" id="email" required />
+          <label className="login__form-label" htmlFor="email">
+            Email *
+          </label>
+          <input
+            className="login__form-input"
+            type="email"
+            id="email"
+            name="email"
+            onChange={handleremoveLoginErrorMessage}
+            required
+          />
         </div>
 
         <div className="login__input-container">
-          <label className="login__form-label" htmlFor="password">Password  *</label>
-          <input className="login__form-input" type="password" id="password" required />
+          <label className="login__form-label" htmlFor="password">
+            Password *
+          </label>
+          <input
+            className="login__form-input"
+            type="password"
+            id="password"
+            name="password"
+            onChange={handleremoveLoginErrorMessage}
+            required
+          />
         </div>
 
-        <button className="login__form-btn" type="submit">LOGIN</button>
+        <p>{loginError}</p>
+        <button className="login__form-btn" type="submit">
+          LOGIN
+        </button>
       </form>
     </div>
   );

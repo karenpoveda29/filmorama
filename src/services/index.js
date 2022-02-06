@@ -3,6 +3,10 @@ const FILMORAMA_FAVORITE_MOVIES = "filmorama-favorite-movies";
 
 export const loginUser = ({ email, password }) => {
   return new Promise((resolve, reject) => {
+    if (email !== "movie-lover@gmail.com" || password !== "12345") {
+      reject("Invalid user");
+      return;
+    }
     try {
       localStorage.setItem(FILMORAMA_LOGGED_IN_KEY, true);
       resolve();
