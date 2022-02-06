@@ -7,24 +7,19 @@ import { BsFillBookmarkHeartFill, BsFillCameraReelsFill } from "react-icons/bs";
 const Navigation = () => {
   const location = useLocation();
 
-  /* const isHomeActive = () => {
-    return (location.pathname === "/"); 
-  };
-
-  const isFavoritesActive = () => {
-    return (location.pathname === "/favorites");
-  }; */
+  const isHomeActive = location.pathname === "/";
+  const isFavoritesActive = location.pathname === "/favorites";
 
   return (
     <nav className="navbar">
       <ul className="navbar__list">
-        <Link className={`navbar__link ${location.pathname === "/" && "active"}`} to="/">
+        <Link className={`navbar__link ${isHomeActive && "active"}`} to="/">
           <li className="navbar__list-item">
             <BsFillCameraReelsFill className="navbar__icon" />
             <span>Home</span>
           </li>
         </Link>
-        <Link className={`navbar__link ${location.pathname === "/favorites" && "active"}`} to="/favorites">
+        <Link className={`navbar__link ${isFavoritesActive && "active"}`} to="/favorites">
           <li className="navbar__list-item">
             <BsFillBookmarkHeartFill className="navbar__icon" />
             <span>Favorites</span>
