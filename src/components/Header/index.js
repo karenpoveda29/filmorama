@@ -8,6 +8,9 @@ import { isUserLoggedIn, logoutUser } from "../../services";
 //Constants
 import { LOGIN } from "../../constants/routes"
 
+//Icons
+import { BsFilm } from "react-icons/bs";
+
 const Header = () => {
   const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
   const navigate = useNavigate();
@@ -27,7 +30,10 @@ const Header = () => {
 
   return (
     <nav className="header">
-      <h1 className="header__title">Filmorama</h1>
+      <div className="logo">
+        <BsFilm className="logo__icon"/>
+        <h1 className="logo__title">Filmorama</h1>
+      </div>
           {userIsLoggedIn &&
             <button className="header__logout-btn" type="button" onClick={handleLogout}>
               Log out

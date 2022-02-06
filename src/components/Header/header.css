@@ -10,8 +10,16 @@
   top: 0;
 }
 
-.header__title {
+.logo {
+  display: flex;
+  align-items: center;
   color: var(--font-color);
+  font-size: 1.1rem;
+}
+
+.logo__icon {
+  font-size: 1.4rem;
+  margin-right: .5rem;
 }
 
 .header__logout-btn {

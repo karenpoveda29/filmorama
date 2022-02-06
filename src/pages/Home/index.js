@@ -63,7 +63,7 @@ const Home = () => {
   return (
     <section className="home-page">
       <div className="home-header">
-        <h2>Top Rated Movies</h2>
+        <h2 className="home-header__title">Top Rated Movies</h2>
         <SearchBox searchTerm={searchTerm} onSearchTerm={handleSearchTerm}/>
       </div>
 

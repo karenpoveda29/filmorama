@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <section className="login">
       <form className="login__form" onSubmit={handleFormSubmit}>
-        <h2 className="login__title">Login to Filmora</h2>
+        <h2 className="login__title">Login to Filmorama</h2>
         <div className="login__input-container">
           <label className="login__form-label" htmlFor="email">
             Email *
