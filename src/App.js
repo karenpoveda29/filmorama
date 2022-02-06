@@ -28,7 +28,7 @@ function App() {
         navigate(LOGIN);
       }
     })
-  }, [location.pathname]);
+  }, [location.pathname, navigate]);
 
   return (
     <>

@@ -1,6 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { BsFillBookmarkHeartFill, BsFillCameraReelsFill } from "react-icons/bs";
 import "./navigation.css";
+
+//Icons
+import { BsFillBookmarkHeartFill, BsFillCameraReelsFill } from "react-icons/bs";
 
 const Navigation = () => {
   const location = useLocation();

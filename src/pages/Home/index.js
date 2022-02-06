@@ -6,11 +6,23 @@ import MovieCard from "../../components/MovieCard";
 import Pagination from "../../components/Pagination";
 
 //Services
-import { getMovies } from "../../services";
+import {
+  getMovies,
+  addFavortieMovie,
+  removeFavoriteMovie,
+  getFavoriteMovies,
+} from "../../services";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
+  const [favoriteMovies, setFavoriteMovies] = useState([]);
+
+  useEffect(() => {
+    getFavoriteMovies().then((favoriteMovies) => {
+      setFavoriteMovies(favoriteMovies);
+    });
+  }, []);
 
   useEffect(() => {
     getMovies({ page }).then((movies) => setMovies(movies));
@@ -21,6 +33,18 @@ const Home = () => {
   };
   const handleNextPage = () => {
     setPage((page) => page + 1);
+  };
+
+  const handleAddFavorite = (movieId) => {
+    const movieDetails = movies.find((movie) => movie.id === movieId);
+    addFavortieMovie(movieDetails).then((favoriteMovies) =>
+      setFavoriteMovies(favoriteMovies)
+    );
+  };
+  const handleRemoveFavorite = (movie) => {
+    removeFavoriteMovie(movie).then((favoriteMovies) =>
+      setFavoriteMovies(favoriteMovies)
+    );
   };
 
   return (
@@ -34,12 +58,20 @@ const Home = () => {
       <ul>
         {movies?.map((movie) => (
           <MovieCard
-          key={movie.id}
-          posterPath={movie.poster_path}
-          title={movie.title}
-          voteAverage={movie.vote_average}
+            key={movie.id}
+            id={movie.id}
+            posterPath={movie.poster_path}
+            title={movie.title}
+            voteAverage={movie.vote_average}
+            isOnFavoriteMovies={
+              favoriteMovies.find(
+                (favoriteMovie) => favoriteMovie.id === movie.id
+              ) !== undefined
+            }
+            onAddFavorite={handleAddFavorite}
+            onRemoveFavorite={handleRemoveFavorite}
           />
-          ))}
+        ))}
       </ul>
       <Pagination
         page={page}
