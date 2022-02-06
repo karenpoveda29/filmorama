@@ -3,7 +3,12 @@ const FILMORAMA_FAVORITE_MOVIES = "filmorama-favorite-movies";
 
 export const loginUser = ({ email, password }) => {
   return new Promise((resolve, reject) => {
-    if (email !== "movie-lover@gmail.com" || password !== "12345") {
+    const validEmail = process.env.REACT_APP_VALID_EMAIL;
+    const validPassword = process.env.REACT_APP_VALID_PASSWORD;
+    console.log('validEmail:', validEmail)
+    console.log('validPassword:', validPassword)
+    
+    if (email !== validEmail || password !== validPassword) {
       reject("Invalid user");
       return;
     }

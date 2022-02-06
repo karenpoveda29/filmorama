@@ -15,7 +15,7 @@ const Login = () => {
         navigate("/");
       }
     });
-  }, []);
+  }, [navigate]);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
