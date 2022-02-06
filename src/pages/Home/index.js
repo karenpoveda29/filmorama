@@ -4,6 +4,7 @@ import "./home.css";
 //Components
 import MovieCard from "../../components/MovieCard";
 import Pagination from "../../components/Pagination";
+import SearchBox from "../../components/SearchBox";
 
 //Services
 import {
@@ -17,6 +18,7 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     getFavoriteMovies().then((favoriteMovies) => {
@@ -47,16 +49,32 @@ const Home = () => {
     );
   };
 
+  const handleSearchTerm = (e) => {
+    const searchValue = e.target.value;
+    setSearchTerm(searchValue);
+  };
+
+  const bySearchTerm = (movie) => {
+    return movie.title.toLowerCase().includes(searchTerm.toLowerCase().trim());   
+  };
+
+  const moviesToShow = movies.filter(bySearchTerm);
+
   return (
     <div className="home-page">
-      <h2>Top Rated Movies</h2>
+      <div>
+        <h2>Top Rated Movies</h2>
+        <SearchBox searchTerm={searchTerm} onSearchTerm={handleSearchTerm}/>
+      </div>
+
       <Pagination
         page={page}
         onPreviousPage={handlePreviousPage}
         onNextPage={handleNextPage}
       />
       <ul>
-        {movies?.map((movie) => (
+        {moviesToShow.length === 0 && searchTerm !== "" && <p className="info-message">No movies match the search</p>}
+        {moviesToShow?.map((movie) => (
           <MovieCard
             key={movie.id}
             id={movie.id}
