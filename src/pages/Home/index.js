@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./home.css";
 
 //Components
@@ -43,8 +43,8 @@ const Home = () => {
       setFavoriteMovies(favoriteMovies)
     );
   };
-  const handleRemoveFavorite = (movie) => {
-    removeFavoriteMovie(movie).then((favoriteMovies) =>
+  const handleRemoveFavorite = (movieId) => {
+    removeFavoriteMovie(movieId).then((favoriteMovies) =>
       setFavoriteMovies(favoriteMovies)
     );
   };
