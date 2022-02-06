@@ -1,1 +1,1 @@
-export const POSTER_URL = "https://image.tmdb.org/t/p/w185/";
+export const IMAGE_URL = "https://image.tmdb.org/t/p/w185/";
