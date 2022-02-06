@@ -42,6 +42,14 @@ export const getMovies = ({ page }) => {
     .then((res) => res.results);
 };
 
+export const getMovieDetails = (movieId) => {
+  const apiKey = process.env.REACT_APP_THE_MOVIE_DB_API_KEY;
+  return fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`
+  )
+    .then((res) => res.json());
+};
+
 export const getFavoriteMovies = () => {
   return new Promise((resolve, reject) => {
     const favoriteMovies = JSON.parse(

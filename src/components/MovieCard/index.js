@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+ 
 //Constants
-import { POSTER_URL } from "../../constants/urls";
+import { IMAGE_URL } from "../../constants/urls";
 
 //Icons
 import { BsHeartFill, BsHeart } from "react-icons/bs";
@@ -15,7 +17,9 @@ const MovieCard = ({
 }) => {
   return (
     <li>
-      <img src={`${POSTER_URL}${posterPath}`} alt={title} />
+      <Link to={`/details/${id}`}>
+        <img src={`${IMAGE_URL}${posterPath}`} alt={title} />
+      </Link>
       <h3>{title}</h3>
       <p>{voteAverage}</p>
       {isOnFavoriteMovies ? (
