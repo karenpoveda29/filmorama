@@ -9,7 +9,7 @@ Este proyecto fue desarrollado con React y los estilos fueron hechos con vanilla
 ## Implementación
 Para poder acceder al login de este proyecto se requiere un usuario y contraseña únicos. Estos pueden ser agregados en el archivo .env a las variables de entorno creadas para este propósito. 
 
-El login cuenta con algunas validaciones como no recibir campos vacíos, verificar que el correo tenga el formato correcto, y que el usuario y contraseña coincidan con los registrados en el localStorage, de lo contrario se muestra un mensaje de error. 
+El login cuenta con algunas validaciones como no recibir campos vacíos, verificar que el correo tenga el formato correcto, y que el usuario y contraseña coincidan con los guardados en las variables de entorno, de lo contrario se muestra un mensaje de error. 
 
 Además de esto no permite ingresar a otras páginas como home o favorites si no se encuentra logeado el usuario. De las misma manera, una vez logeado siempre lo llevará a la página de home y no podrá ver la página de login a menos que cierrre sesión. 
 
