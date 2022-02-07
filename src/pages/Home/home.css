@@ -5,7 +5,7 @@
   margin-bottom: 7vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .home-header {
@@ -27,7 +27,14 @@
 .cards-container {
   padding: 0;
   margin: 0;
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
+  width: 100%;
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 15px;
+
 }
 
 @media (min-width: 768px) {

@@ -27,7 +27,7 @@ const MovieCard = ({
         />
       </Link>
       <div className="card__info">
-        <h3 className="card__info-title">{title}</h3>
+        <h3 className="card__info-movie-title">{title}</h3>
         <p className="card__info-release-date">Release date: <span>{releaseDate}</span></p>
         <p className="card__info-score">
           {voteAverage}
