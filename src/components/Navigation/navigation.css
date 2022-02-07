@@ -23,30 +23,31 @@
   list-style: none;
   display: flex;
   align-items: center;
-  padding: .8rem 1rem;
+  padding: 0.8rem 1rem;
   border: none;
 }
 
 .navbar__icon {
   color: var(--font-color);
   font-size: 1.5rem;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .navbar__link {
-  font-size: 1.rem;
+  font-size: 1rem;
   color: var(--font-color);
   text-decoration: none;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   line-height: 0;
 }
 
-.navbar__link:link, .navbar__link:visited {
+.navbar__link:link,
+.navbar__link:visited {
   color: var(--font-color);
 }
 
 .active {
   border-radius: 15px;
-  background-color: #502F87;
-  color: #F9F5FF;
+  background-color: #502f87;
+  color: #f9f5ff;
 }

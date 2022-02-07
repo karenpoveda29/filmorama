@@ -29,7 +29,7 @@ const Details = () => {
         />
 
         <div className="details__card-info">
-          <h2 className="details__card-title">{movieDetails.title}</h2>
+          <h3 className="details__card-title">{movieDetails.title}</h3>
           <div className="details__card-genres">
             <p>Genres:</p>
             <div className="details__card-genres-box">

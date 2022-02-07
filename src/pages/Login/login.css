@@ -31,13 +31,13 @@
 
 .login__form-label {
   display: block;
-  margin-bottom: .2rem;
+  margin-bottom: 0.2rem;
 }
 
 .login__form-input {
   margin-bottom: 1.5rem;
   width: 100%;
-  padding: .7rem 1.5rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 10px;
   border: 2px solid #6b53ca;
   background: transparent;
@@ -48,8 +48,8 @@
 .login__form-btn {
   color: var(--font-color);
   margin-top: 2rem;
-  width: 100%; 
-  padding: .8rem 0;
+  width: 100%;
+  padding: 0.8rem 0;
   font-weight: 700;
   border: solid #705cbe;
   border-width: 0 0 4px;
@@ -58,23 +58,16 @@
   cursor: pointer;
 }
 
-
 @media (min-width: 768px) and (max-width: 1024px) {
-  
   .login__form {
     height: 70%;
     width: 60%;
   }
-  
 }
 
 @media (min-width: 1025px) {
-  
   .login__form {
     height: 60%;
     width: 30%;
   }
-  
 }
-
-
