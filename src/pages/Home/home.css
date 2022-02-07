@@ -32,6 +32,10 @@
   gap: 15px;
 }
 
+.info-message {
+  color: var(--font-color);
+}
+
 @media (min-width: 768px) {
   .home-page {
     padding: 2% 5%;

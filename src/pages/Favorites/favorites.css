@@ -22,3 +22,7 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 15px;
 }
+
+.info-message {
+  font-size: 2rem;
+}
