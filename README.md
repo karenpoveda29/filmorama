@@ -1,5 +1,5 @@
+![Filmorama](https://i.imgur.com/90nPmQb.png)
 # Filmorama
-![Filmorama](https://drive.google.com/file/d/1HcWTheTImjtk6_dfWoYbPzEe9AEFPXzC/view?usp=sharing)
 
 Este proyecto fue desarrollado con React y los estilos fueron hechos con vanilla CSS. Además de esto se hizo uso de la API [THE MOVIE DB](https://developers.themoviedb.org/3/getting-started/introduction) para mostrar un listado de las películas con mejor votación en esa página.
 
@@ -19,9 +19,11 @@ Por otro lado, dado el alcance de este proyecto, utilice el método en el cual e
 
 El proyecto se desarolló con un enfoque mobile-first, sin embargo es responsive para otros tamaños de pantalla como tablet o desktop. Ejemplos en desktop:
 
-![login page desktop](src/assets/login-desktop.png)
-![home page desktop](src/assets/home-desktop.png)
-![favorites page desktop](src/assets/favorites-desktop.png)
+![login page desktop](https://i.imgur.com/WF3nyVC.png)
+
+![home page desktop](https://i.imgur.com/ECeSupY.png)
+
+![favorites page desktop](https://i.imgur.com/2pHaocM.png)
 
 ## Implementaciones futuras
 - Agregar un backend para poder hacer login de varios usuarios con sus validaciones correspondientes.
