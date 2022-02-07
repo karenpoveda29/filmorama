@@ -32,6 +32,7 @@ const Favorites = () => {
             id={favoriteMovie.id}
             posterPath={favoriteMovie.poster_path}
             title={favoriteMovie.title}
+            releaseDate={favoriteMovie.release_date.slice(0, 4)}
             voteAverage={favoriteMovie.vote_average}
             isOnFavoriteMovies={true}
             onRemoveFavorite={handleRemoveFavorite}

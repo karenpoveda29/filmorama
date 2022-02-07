@@ -80,6 +80,7 @@ const Home = () => {
             id={movie.id}
             posterPath={movie.poster_path}
             title={movie.title}
+            releaseDate={movie.release_date.slice(0, 4)}
             voteAverage={movie.vote_average}
             isOnFavoriteMovies={
               favoriteMovies.find(
