@@ -5,8 +5,6 @@ export const loginUser = ({ email, password }) => {
   return new Promise((resolve, reject) => {
     const validEmail = process.env.REACT_APP_VALID_EMAIL;
     const validPassword = process.env.REACT_APP_VALID_PASSWORD;
-    console.log('validEmail:', validEmail)
-    console.log('validPassword:', validPassword)
     
     if (email !== validEmail || password !== validPassword) {
       reject("Invalid user");
