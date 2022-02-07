@@ -4,7 +4,7 @@
 Este proyecto fue desarrollado con React y los estilos fueron hechos con vanilla CSS. Además de esto se hizo uso de la API [THE MOVIE DB](https://developers.themoviedb.org/3/getting-started/introduction) para mostrar un listado de las películas con mejor votación en esa página.
 
 ## Demo
-![Filmorama demo](src/assets/Filmorama-demo.gif)
+![Filmorama demo](src/Filmorama-demo.gif)
 
 ## Implementación
 Para poder acceder al login de este proyecto se requiere un usuario y contraseña únicos. Estos pueden ser agregados en el archivo .env a las variables de entorno creadas para este propósito. 
