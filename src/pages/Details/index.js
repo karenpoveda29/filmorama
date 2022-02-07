@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./details.css"
 
 //Services
 import { getMovieDetails } from "../../services";
@@ -18,26 +19,29 @@ const Details = () => {
   }, [movieId]);
 
   return (
-    <section>
-      <img
-        src={`${IMAGE_URL}${movieDetails.backdrop_path}`}
-        alt={movieDetails.title}
-      />
-      <h2>{movieDetails.title}</h2>
-      <div>
-        <p>Genres:</p>
-        <ul>
-          {movieDetails.genres?.map((genre) => (
-            <li key={genre.id}>{genre.name}</li>
-          ))}
-        </ul>
+    <section className="details">
+      <h2 className="details__title">Movie Details</h2>
+      <div className="details__card">
+        <img
+          className="details__card-image"
+          src={`${IMAGE_URL}${movieDetails.backdrop_path}`}
+          alt={movieDetails.title}
+        />
+
+        <div className="details__card-info">
+          <h2 className="details__card-title">{movieDetails.title}</h2>
+          <div className="details__card-genres">
+            <p>Genres:</p>
+            <div className="details__card-genres-box">
+              {movieDetails.genres?.map((genre) => (
+                <span key={genre.id}>{genre.name}</span>
+                ))}
+            </div>
+          </div>
+          <p className="details__card-duration">Duration: <span>{movieDetails.runtime} min</span></p>
+          <p className="details__card-overview">{movieDetails.overview}</p>
+        </div>
       </div>
-      <p>{movieDetails.overview}</p>
-      <p>{`Duration: ${movieDetails.runtime}`}</p>
-      <p>
-        {movieDetails.vote_average}
-        <span>/10</span>
-      </p>
     </section>
   );
 };

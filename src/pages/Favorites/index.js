@@ -22,7 +22,7 @@ const Favorites = () => {
   };
 
   return (
-    <section>
+    <section className="favorites">
       <h2>Your favorites</h2>
       <ul>
         {favoriteMovies.length === 0 && <p className="info-message">There are no favorite movies</p>}
